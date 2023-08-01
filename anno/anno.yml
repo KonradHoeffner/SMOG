@@ -1,0 +1,27 @@
+namespace: https://annosaxfdm.de/ontology/
+version: 23.08
+inputFile: anno/anno2308.xslx
+outputFile: anno/annods2308.owl
+propertyPrefixes:
+  fmaId: http://purl.org/sig/ont/fma/fma
+annotationProperties:
+  - http://www.w3.org/2000/01/rdf-schema#comment
+  - http://www.w3.org/2000/01/rdf-schema#label
+  - http://www.w3.org/2004/02/skos/core#altLabel
+  - http://www.w3.org/2004/02/skos/core#prefLabel
+objectProperties:
+  - http://www.onto-med.de/ontologies/gfo.owl#hasPart
+  - http://www.onto-med.de/ontologies/gfo.owl#partOf
+  - http://www.onto-med.de/ontologies/gfo.owl#hasProperty
+  - http://www.onto-med.de/ontologies/gfo.owl#propertyOf
+  - http://www.onto-med.de/ontologies/gfo.owl#hasBoundary
+  - http://www.onto-med.de/ontologies/gfo.owl#boundaryOf
+metadata:
+  http://purl.org/vocab/vann/preferredNamespacePrefix: [anno]
+  http://purl.org/vocab/vann/example: [https://annosaxfdm.de/ontology/AnatomicalEntity|https://annosaxfdm.de/ontology/Phenotype|https://annosaxfdm.de/ontology/RelativeAnatomicalLocation]
+  http://purl.org/dc/terms/title: [ANNO|en]
+  http://purl.org/dc/terms/description: [Antropological Notation Ontology|en]
+  http://purl.org/dc/terms/creator: [https://www.cb.hs-mittweida.de/mitarbeiterinnen-mitarbeiter-in-ihren-fachgruppen/heuschkel-marie-luise, https://www.cb.hs-mittweida.de/mitarbeiterinnen-mitarbeiter-in-ihren-fachgruppen/schmiedel-fabian, https://www.cb.hs-mittweida.de/mitarbeiterinnen-mitarbeiter-in-ihren-fachgruppen/fritzsch-hanjo-tim, https://www.imise.uni-leipzig.de/en/Mitarbeiter/Konrad_Hoeffner, https://www.imise.uni-leipzig.de/en/Mitarbeiter/Alexandr_Uciteli]
+  http://purl.org/dc/terms/language: [de, en, la]
+  http://purl.org/dc/terms/license: [https://www.gnu.org/licenses/gpl-3.0.html]
+  http://www.w3.org/ns/dcat#keyword: [antropology]
