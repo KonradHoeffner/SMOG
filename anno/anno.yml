@@ -1,7 +1,7 @@
 namespace: https://annosaxfdm.de/ontology/
-version: 23.08
-inputFile: anno/anno2308.xslx
-outputFile: anno/annods2308.owl
+version: 23.09
+inputFile: anno/anno2309.xslx
+outputFile: anno/annods2309.owl
 propertyPrefixes:
   fmaId: http://purl.org/sig/ont/fma/fma
 annotationProperties:
@@ -16,6 +16,17 @@ objectProperties:
   - http://www.onto-med.de/ontologies/gfo.owl#propertyOf
   - http://www.onto-med.de/ontologies/gfo.owl#hasBoundary
   - http://www.onto-med.de/ontologies/gfo.owl#boundaryOf
+metaClasses:
+  - https://annosaxfdm.de/ontology/Bone
+  - https://annosaxfdm.de/ontology/BonePart
+  - https://annosaxfdm.de/ontology/BoneCompound
+  - https://annosaxfdm.de/ontology/Tooth
+  - https://annosaxfdm.de/ontology/Phenotype
+  - https://annosaxfdm.de/ontology/AnatomicalPoint
+  - https://annosaxfdm.de/ontology/AnatomicalLine
+  - https://annosaxfdm.de/ontology/AnatomicalAxis
+  - https://annosaxfdm.de/ontology/AnatomicalPlane
+  - https://annosaxfdm.de/ontology/RelativeAnatomicalLocation
 metadata:
   http://purl.org/vocab/vann/preferredNamespacePrefix: [anno]
   http://purl.org/vocab/vann/example: [https://annosaxfdm.de/ontology/AnatomicalEntity|https://annosaxfdm.de/ontology/Phenotype|https://annosaxfdm.de/ontology/RelativeAnatomicalLocation]
