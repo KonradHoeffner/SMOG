@@ -3,6 +3,7 @@ version: 2
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
+    assignees: ["KonradHoeffner"]
     schedule:
       interval: "daily"
   - package-ecosystem: "maven"
