@@ -27,6 +27,9 @@ metaClasses:
   - https://annosaxfdm.de/ontology/AnatomicalAxis
   - https://annosaxfdm.de/ontology/AnatomicalPlane
   - https://annosaxfdm.de/ontology/RelativeAnatomicalLocation
+individualClasses:
+  - https://annosaxfdm.de/ontology/VisualDefinition
+  - https://annosaxfdm.de/ontology/Source
 metadata:
   http://purl.org/vocab/vann/preferredNamespacePrefix: [anno]
   http://purl.org/vocab/vann/example: [https://annosaxfdm.de/ontology/AnatomicalEntity|https://annosaxfdm.de/ontology/Phenotype|https://annosaxfdm.de/ontology/RelativeAnatomicalLocation]
