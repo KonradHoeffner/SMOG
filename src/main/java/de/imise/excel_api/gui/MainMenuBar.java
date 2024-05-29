@@ -1,6 +1,8 @@
 package de.imise.excel_api.gui;
 
+import de.imise.excel_api.owl_export.Config;
 import java.awt.Desktop;
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.util.Properties;
@@ -13,21 +15,35 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.Region;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 
 /** File and Help menu. */
-public class MainMenuBar {
+class MainMenuBar {
 
   private MainMenuBar() {}
 
-  static Menu fileMenu() {
+  static Menu fileMenu(Gui gui) {
     Menu fileMenu = new Menu("_Datei");
 
     {
-      MenuItem openSnikGraphItem = new MenuItem("under construction");
-      fileMenu.getItems().add(openSnikGraphItem);
-      openSnikGraphItem.setOnAction(
-          event -> {
-            browse("https://github.com/Onto-Med/SMOG");
+      MenuItem openDocxItem = new MenuItem("SM_OG-Konfiguration öffnen");
+      fileMenu.getItems().add(openDocxItem);
+      openDocxItem.setAccelerator(new KeyCodeCombination(KeyCode.D, KeyCombination.CONTROL_DOWN));
+      var openChooser = new FileChooser();
+      openChooser.getExtensionFilters().add(new ExtensionFilter("YAML", "*.yml"));
+      openDocxItem.setOnAction(
+          e -> {
+            File file = openChooser.showOpenDialog(gui.stage);
+            if (file == null) {
+              return;
+            }
+            try {
+              Config.get(file);
+              // main.load(new DocxLoader(new FileInputStream(file)));
+            } catch (IllegalArgumentException ex) {
+              Log.error("Fehler beim Öffnen einer SMOG YAML Konfiguration", ex);
+            }
           });
     }
     {
@@ -135,7 +151,7 @@ public class MainMenuBar {
     return helpMenu;
   }
 
-  static MenuBar create() {
-    return new MenuBar(fileMenu(), helpMenu());
+  static MenuBar create(Gui gui) {
+    return new MenuBar(fileMenu(gui), helpMenu());
   }
 }

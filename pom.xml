@@ -81,6 +81,13 @@
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-controls</artifactId>
 			<version>22.0.1</version>
+			<!--<classifier>linux</classifier>-->
+			<!--<classifier>win</classifier>-->
+		</dependency>
+		<dependency>
+			<groupId>org.controlsfx</groupId>
+			<artifactId>controlsfx</artifactId>
+			<version>11.2.1</version>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>

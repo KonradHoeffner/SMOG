@@ -19,8 +19,9 @@ public class Gui extends Application {
   }
 
   private final SplitPane textPane = new SplitPane();
-  private final SplitPane rdfText = new SplitPane();
+  private final SplitPane properties = new SplitPane();
   private final SplitPane textArea = new SplitPane();
+  Stage stage;
 
   private class UnclosableTab extends Tab {
     UnclosableTab(String text, Node content) {
@@ -32,7 +33,7 @@ public class Gui extends Application {
   /** Setup the GUI. Called automatically with "mvn javafx:run". */
   @Override
   public void start(Stage stage) {
-    // this.stage = stage;
+    this.stage = stage;
     stage.setTitle("SMOG GUI");
 
     var pane = new VBox();
@@ -45,9 +46,9 @@ public class Gui extends Application {
       stage.show();
       // this.window = scene.getWindow();
     }
-    pane.getChildren().add(MainMenuBar.create(/*this*/ ));
+    pane.getChildren().add(MainMenuBar.create(this));
 
-    rdfText.setMinSize(300, 500);
+    properties.setMinSize(300, 500);
     textArea.prefHeight(
         Double.MAX_VALUE); // goal is to fill parent vertically, does not work fully though
     textPane.setPrefWidth(Double.MAX_VALUE);
@@ -64,7 +65,7 @@ public class Gui extends Application {
               new UnclosableTab("Text", textPane),
               //          new UnclosableTab("Klassen", tableView),
               //          new UnclosableTab("Verbindungen", tripleTable),
-              new UnclosableTab("RDF", rdfText));
+              new UnclosableTab("Properties", properties));
 
       pane.getChildren().add(tabPane);
     }
